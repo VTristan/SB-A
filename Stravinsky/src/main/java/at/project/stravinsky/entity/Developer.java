@@ -29,7 +29,7 @@ public class Developer {
 	
 	@Override
 	public String toString() {
-		return "Developer [id=" + id + ", pseudo=" + pseudo + "]";
+		return "{'id':'"+id+"','pseudo':'"+pseudo+"'}";
 	}
 
 	//ASSESSEURS//
