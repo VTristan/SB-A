@@ -1,29 +1,49 @@
 package at.project.stravinsky.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="developer")
 public class Developer {
-	private String id;
-	private String name;
 	
-	public Developer(String id, String name) {
-		super();
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="dev_id")
+	private Integer id;
+	@Column(name="pseudo", nullable=false)
+	private String pseudo;
+	
+	public Developer(Integer id, String pseudo) {
 		this.id = id;
-		this.name = name;
+		this.pseudo = pseudo;
 	}
-	public String getId() {
-		return id;
+
+	public Developer(String pseudo) {
+		this.pseudo = pseudo;
 	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
+	
 	@Override
 	public String toString() {
-		return "Developers [id=" + id + ", name=" + name + "]";
+		return "Developer [id=" + id + ", pseudo=" + pseudo + "]";
+	}
+
+	//ASSESSEURS//
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public String getPseudo() {
+		return pseudo;
+	}
+	public void setPseudo(String pseudo) {
+		this.pseudo = pseudo;
 	}
 	
 }

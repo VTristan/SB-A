@@ -4,16 +4,18 @@ import java.util.List;
 
 import at.project.stravinsky.entity.Developer;
 
-public interface DeveloperRepository {
-
+public interface DeveloperDao {
+	//Ici, aucune annotation, une simple interface.
+	//Nous listons les méthodes qui permetterons d'interagir avec la BdD.
+	
 	public int insertDeveloper(Developer developer);
 
-	public Developer getDevelopersById(String id);
+	public Developer getDevelopersById(Integer id);
 
 	public List<Developer> getAllDevelopers();
 
 	public int updateDevelopers(Developer developers);
 
-	public int deleteDevelopersById(String id);
+	public int deleteDevelopersById(Integer id);
 
 }
